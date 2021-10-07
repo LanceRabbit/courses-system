@@ -43,6 +43,14 @@ group :development, :test do
   gem 'annotate', '~> 3.1.1', require: false
   # static analysis
   gem 'brakeman', '~> 5.1.1', require: false
+
+  gem 'rspec-rails', '~> 4.0.2'
+  gem 'factory_bot_rails', '~> 6.2.0'
+end
+
+group :test do
+  gem 'database_cleaner', '~> 2.0'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
