@@ -1,0 +1,74 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.6.7
+  DisplayCopNames: true
+  NewCops: enable
+  Exclude:
+    - 'bin/*'
+    - 'lib/tasks/*'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+
+Rails:
+  Enabled: true
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
+Rails/FilePath:
+  Enabled: false
+Metrics:
+  Exclude:
+    - db/migrate/*
+    - Rakefile
+    - Gemfile
+    - config/**/*
+    - spec/**/*
+    - lib/tasks/**/*
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
+    - lib/tasks/**/*
+    - spec/**/*
+Metrics/MethodLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - lib/**/*
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+Style:
+  Exclude:
+    - spec/*_helper.rb
+Style/GlobalStdStream:
+  Enabled: false
+Style/RedundantFetchBlock:
+  Enabled: false
+Style/BlockComments:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+Style/Documentation:
+  Enabled: false
+Style/AsciiComments:
+  Exclude:
+    - lib/**/*
+Style/StringLiterals:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Lint/MissingSuper:
+  Exclude:
+    - 'lib/**/*'
+RSpec/HookArgument:
+  Enabled: false
