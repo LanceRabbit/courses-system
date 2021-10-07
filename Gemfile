@@ -68,6 +68,9 @@ group :development do
 
   # N+1 checker
   gem 'bullet', '~> 6.1.5'
+
+  # pre-commit
+  gem 'lefthook', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
