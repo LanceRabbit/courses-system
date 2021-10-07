@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # table info
   gem 'annotate', '~> 3.1.1', require: false
+  # static analysis
+  gem 'brakeman', '~> 5.1.1', require: false
 end
 
 group :development do
