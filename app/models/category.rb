@@ -10,5 +10,6 @@
 #  updated_at :datetime         not null
 #
 class Category < ApplicationRecord
+  has_many :courses, dependent: :restrict_with_error
   validates :name, presence: true
 end

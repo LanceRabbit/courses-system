@@ -10,6 +10,10 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
+  describe '#associations' do
+    it { is_expected.to have_many(:courses).dependent(:restrict_with_error) }
+  end
+
   describe "validations" do
     subject { build(:category) }
 

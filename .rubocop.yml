@@ -37,6 +37,7 @@ Metrics/BlockLength:
     - config/environments/*
     - lib/tasks/**/*
     - spec/**/*
+    - db/*
 Metrics/MethodLength:
   Enabled: false
 Metrics/AbcSize:
@@ -77,4 +78,6 @@ Lint/MissingSuper:
   Exclude:
     - 'lib/**/*'
 RSpec/HookArgument:
+  Enabled: false
+RSpec/ImplicitSubject:
   Enabled: false
