@@ -29,7 +29,10 @@ gem 'jbuilder', '~> 2.5'
 
 # reduce the html syntax
 gem 'slim', '~> 4.0.1'
-
+# colorful display
+gem 'bootstrap', '~> 5.1.0'
+# Bootstrap JavaScript depends on jQuery. add the jquery-rails gem
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
