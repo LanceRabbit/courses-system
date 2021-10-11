@@ -36,4 +36,6 @@ class Course < ApplicationRecord
     less_than_or_equal_to: 30
   }, allow_nil: false
   validates :price, numericality: { greater_than_or_equal_to: 0 }, allow_nil: false
+
+  enum status: { unpublished: 'unpublished', published: 'published' }
 end

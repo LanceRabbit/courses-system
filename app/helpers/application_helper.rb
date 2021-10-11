@@ -10,4 +10,10 @@ module ApplicationHelper
 
     bootstrap_alert_class[level.to_sym]
   end
+
+  def currencies
+    CoursesSystemConfig::CURRENCY.map do |currency|
+      [currency, currency]
+    end
+  end
 end

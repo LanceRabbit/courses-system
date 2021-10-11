@@ -85,6 +85,9 @@ Style/NumericLiterals:
 Lint/MissingSuper:
   Exclude:
     - 'lib/**/*'
+Naming/VariableNumber:
+  Exclude:
+    - spec/**/*
 RSpec/HookArgument:
   Enabled: false
 RSpec/ImplicitSubject:

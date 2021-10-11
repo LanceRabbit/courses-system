@@ -25,8 +25,8 @@
 #
 FactoryBot.define do
   factory :course do
-    title              { 'new course' }
-    slug               { 'test_slug' }
+    title { 'new course' }
+    sequence(:slug) { |n| "slug-#{n}" }
     price              { 100.00 }
     activation_period  { 1 }
     status             { 'unpublished' }

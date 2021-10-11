@@ -36,6 +36,7 @@ RSpec.describe Course, type: :model do
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:status) }
     it { is_expected.to validate_presence_of(:currency) }
+    it { is_expected.to validate_presence_of(:category_id) }
     it { is_expected.to validate_uniqueness_of(:slug) }
     it { is_expected.to validate_numericality_of(:price).is_greater_than_or_equal_to(0) }
 
@@ -44,5 +45,18 @@ RSpec.describe Course, type: :model do
                                                                  .is_less_than_or_equal_to(30)
                                                                  .is_greater_than_or_equal_to(1)
     }
+  end
+
+  describe 'update slug field' do
+    let(:course_1) { create(:course) }
+    let(:course_2) { create(:course) }
+
+    it 'when slug not duplicated' do
+      expect(course_1.update(slug: 'change-is-ok')).to be_truthy
+    end
+
+    it 'when slug duplicated' do
+      expect(course_1.update(slug: course_2.slug)).to be_falsey
+    end
   end
 end

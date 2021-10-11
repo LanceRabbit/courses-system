@@ -27,4 +27,35 @@ RSpec.describe "Admin::Courses", type: :request do
       it { is_expected.to have_http_status(:not_found) }
     end
   end
+
+  describe "Post Create" do
+    subject { post admin_courses_path(params) }
+
+    let(:category) { create(:category) }
+
+    context "when fill all fields" do
+      let(:params) do
+        {
+          course: {
+            title: 'new course',
+            description: 'hello word',
+            slug: 'new-course',
+            price: 100.00,
+            activation_period: 20,
+            status: 'unpublished',
+            currency: 'USD',
+            category_id: category.id
+          }
+        }
+      end
+
+      it { is_expected.to redirect_to(admin_courses_path) }
+    end
+
+    context "when not fill all fields" do
+      let(:params) { { course: { title: 'new course' } } }
+
+      it { is_expected.to render_template(:new) }
+    end
+  end
 end
