@@ -1,0 +1,13 @@
+- flash.each do |key, message|
+  .contanier
+    .alert.alert-dismissible.fade.show.text-center(
+      class = flash_class(key)
+      role = "alert"
+    )
+      = message
+      button.close(
+        type = "button"
+        data-dismiss = "alert"
+        aria-label = "Close"
+      )
+        span(aria-hidden = "true") &times;
