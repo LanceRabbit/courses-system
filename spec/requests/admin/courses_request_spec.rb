@@ -21,10 +21,10 @@ RSpec.describe "Admin::Courses", type: :request do
       it { is_expected.to have_http_status(:ok) }
     end
 
-    # context "when not find course by slug" do
-    #   let(:course) { build(:course) }
+    context "when not find course by slug" do
+      let(:course) { build(:course) }
 
-    #   it { is_expected.to have_http_status(:bad_request) }
-    # end
+      it { is_expected.to have_http_status(:not_found) }
+    end
   end
 end
