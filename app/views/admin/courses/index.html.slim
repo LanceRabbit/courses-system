@@ -1,1 +1,22 @@
-h1 Courses System
+.row
+  .col-12
+  table.table.table-striped.table-hover
+    thead
+      th ID
+      th 標題
+      th url
+      th 狀態
+      th 費用
+      th 使用天數
+      th Action
+    tbody
+      - @courses.each do |course|
+        tr
+          td = course.id
+          td = course.title
+          td = course.slug
+          td = course.status
+          td = course.price
+          td = course.activation_period
+          td.action
+            = link_to '顯示', admin_course_path(course), method: :get, class: 'btn btn-primary'

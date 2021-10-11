@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "Admin::Courses", type: :request do
   describe "Get Index" do
-    it "include content" do
+    it "can view all courese" do
       get admin_courses_path
-      expect(response.body).to include("Courses System")
+      expect(response).to have_http_status(:ok)
     end
   end
 

@@ -30,3 +30,11 @@ $black: black;
 .alert-dismissible {
   padding-left: 35px;
 }
+
+.action {
+  display: flex;
+
+  a {
+    margin-left: 5px;
+  }
+}

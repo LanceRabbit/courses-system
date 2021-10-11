@@ -1,6 +1,8 @@
 module Admin
   class CoursesController < ApplicationController
-    def index; end
+    def index
+      @courses = Course.all
+    end
 
     def show
       @course = Course.find_by!(slug: params[:slug])
