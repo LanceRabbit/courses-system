@@ -215,6 +215,9 @@ GEM
       tilt
     shoulda-matchers (5.0.0)
       activesupport (>= 5.2.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -278,6 +281,7 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (~> 5.0)
   shoulda-matchers (~> 5.0)
+  simple_form (~> 5.1.0)
   slim (~> 4.0.1)
   spring
   spring-watcher-listen (~> 2.0.0)

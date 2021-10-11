@@ -33,6 +33,7 @@ gem 'slim', '~> 4.0.1'
 gem 'bootstrap', '~> 4.6.0'
 # Bootstrap JavaScript depends on jQuery. add the jquery-rails gem
 gem 'jquery-rails'
+gem 'simple_form', '~> 5.1.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
