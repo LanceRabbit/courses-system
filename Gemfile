@@ -51,6 +51,7 @@ group :development, :test do
   # static analysis
   gem 'brakeman', '~> 5.1.1', require: false
   # coding style
+  gem 'rails-controller-testing'
   gem 'rubocop', '~> 1.22', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
