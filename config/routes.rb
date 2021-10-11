@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :courses, only: :index
+    resources :courses, only: %i[index show], param: :slug
   end
 end
