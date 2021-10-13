@@ -1,14 +1,12 @@
 module Admin
   class CoursesController < ApplicationController
-    before_action :set_course, only: %i[edit update]
+    before_action :set_course, only: %i[show edit update]
 
     def index
       @courses = Course.all
     end
 
-    def show
-      @course = Course.find_by!(slug: params[:slug])
-    end
+    def show; end
 
     def new
       @course = Course.new
