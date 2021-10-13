@@ -20,3 +20,4 @@
           td = course.activation_period
           td.action
             = link_to '顯示', admin_course_path(course), method: :get, class: 'btn btn-primary'
+            = link_to '編輯', edit_admin_course_path(course.slug), method: :get, class: 'btn btn-info'
