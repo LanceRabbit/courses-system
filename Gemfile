@@ -27,6 +27,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# reduce the html syntax
+gem 'slim', '~> 4.0.1'
+# colorful display
+gem 'bootstrap', '~> 4.6.0'
+# Bootstrap JavaScript depends on jQuery. add the jquery-rails gem
+gem 'jquery-rails'
+gem 'simple_form', '~> 5.1.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -44,6 +51,7 @@ group :development, :test do
   # static analysis
   gem 'brakeman', '~> 5.1.1', require: false
   # coding style
+  gem 'rails-controller-testing'
   gem 'rubocop', '~> 1.22', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false

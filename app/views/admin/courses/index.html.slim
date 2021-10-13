@@ -1,0 +1,24 @@
+.row
+  .col-12
+  table.table.table-striped.table-hover
+    thead
+      th ID
+      th 標題
+      th url
+      th 狀態
+      th 費用
+      th 使用天數
+      th Action
+    tbody
+      - @courses.each do |course|
+        tr
+          td = course.id
+          td = course.title
+          td = course.slug
+          td = course.status
+          td = course.price
+          td = course.activation_period
+          td.action
+            = link_to '顯示', admin_course_path(course.slug), method: :get, class: 'btn btn-primary'
+            = link_to '編輯', edit_admin_course_path(course.slug), method: :get, class: 'btn btn-info'
+            = link_to '刪除', admin_course_path(course.slug), data: {:confirm => '確認是否刪除'},  method: :delete, class: 'btn btn-danger'

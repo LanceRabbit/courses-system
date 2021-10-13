@@ -1,0 +1,15 @@
+.card
+  .card-header
+    h2 課程資訊
+  .card-body
+    table.table
+      tbody
+        tr
+          th.text-right.border 標題
+          td.text-left.border = @course.title
+        tr
+          th.text-right.border URL
+          td.text-left.border = @course.slug
+        tr
+          th.text-right.border 費用
+          td.text-left.border = @course.price

@@ -34,22 +34,34 @@ Metrics:
     - lib/tasks/**/*
 Metrics/BlockLength:
   Exclude:
-    - config/environments/*
+    - config/**/*
     - lib/tasks/**/*
     - spec/**/*
+    - db/*
 Metrics/MethodLength:
   Enabled: false
 Metrics/AbcSize:
   Enabled: false
+Lint/UnusedBlockArgument:
+  Exclude:
+    - config/**/*
+Layout:
+  Exclude:
+    - config/**/*
 Layout/LineLength:
   Max: 120
   Exclude:
     - lib/**/*
+    - config/**/*
 Layout/SpaceInsideArrayLiteralBrackets:
   Enabled: false
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - db/*
 Style:
   Exclude:
     - spec/*_helper.rb
+    - config/**/*
 Style/GlobalStdStream:
   Enabled: false
 Style/RedundantFetchBlock:
@@ -67,8 +79,16 @@ Style/StringLiterals:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/NumericLiterals:
+  Exclude:
+    - db/*
 Lint/MissingSuper:
   Exclude:
     - 'lib/**/*'
+Naming/VariableNumber:
+  Exclude:
+    - spec/**/*
 RSpec/HookArgument:
+  Enabled: false
+RSpec/ImplicitSubject:
   Enabled: false

@@ -1,0 +1,28 @@
+h2.text-3xl.font-bold #{action}課程
+
+= simple_form_for course,
+  url: url do |f|
+  = f.input :title, label: '標題'
+  = f.input :description, label: '描述'
+  = f.input :currency, collection: currencies,
+    label: '幣別',
+    include_blank: "Please select currency",
+    required: true,
+    as: :select
+  = f.input :price,
+    input_html: { min: 1 },
+    label: '費用',
+    required: true
+  = f.input :slug, label: 'URL'
+  = f.input :activation_period,
+    input_html: { min: 1, max: 30, value: f.object.activation_period || 1 },
+    label: '使用天數', required: true
+  = f.input :status, include_blank: "Please select status", collection: Course.statuses.keys, label: '狀態'
+  = f.input :category_id, collection: Category.pluck(:name, :id),
+    label: '分類',
+    include_blank: "Please select category",
+    required: true,
+    as: :select
+
+  .text-center
+    = f.submit class: 'btn-lg btn-primary m-4'

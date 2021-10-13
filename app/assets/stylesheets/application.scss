@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+$black: black;
+
+.navbar {
+  margin-bottom: 0;
+  background: $black;
+}
+
+.notify {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.alert-dismissible {
+  padding-left: 35px;
+}
+
+.action {
+  display: flex;
+
+  a {
+    margin-left: 5px;
+  }
+}
