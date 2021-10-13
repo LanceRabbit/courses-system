@@ -1,6 +1,6 @@
 module Admin
   class CoursesController < ApplicationController
-    before_action :set_course, only: %i[show edit update]
+    before_action :set_course, only: %i[show edit update destroy]
 
     def index
       @courses = Course.all
@@ -33,6 +33,12 @@ module Admin
         flash[:alert] = 'updated course failure'
         render :edit
       end
+    end
+
+    def destroy
+      flash[:notice] = 'destroy the course successfully' if @course&.destroy
+
+      redirect_to admin_courses_path
     end
 
     private

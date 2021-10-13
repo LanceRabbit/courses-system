@@ -110,4 +110,12 @@ RSpec.describe "Admin::Courses", type: :request do
       it { is_expected.to render_template(:edit) }
     end
   end
+
+  describe "Delete Destroy" do
+    let!(:course) { create(:course) }
+
+    it "when destroy course" do
+      expect { delete admin_course_path(course.slug) }.to change(Course, :count).by(-1)
+    end
+  end
 end
