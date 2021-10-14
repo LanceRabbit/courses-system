@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  root "pages#home"
+
   namespace :admin do
     resources :courses, param: :slug
     root to: "courses#index"

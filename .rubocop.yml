@@ -92,3 +92,5 @@ RSpec/HookArgument:
   Enabled: false
 RSpec/ImplicitSubject:
   Enabled: false
+RSpec/NestedGroups:
+  Enabled: false
