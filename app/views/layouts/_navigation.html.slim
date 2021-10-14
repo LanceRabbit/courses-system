@@ -3,4 +3,12 @@ nav.navbar.navbar-dark.navbar-static-top.navbar-expand-md
     = link_to 'Courses System', admin_courses_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       ul.nav.navbar-nav.mr-auto
-        li.nav-item = link_to 'Create New Course', new_admin_course_path, class:'nav-link'
+      ul.navbar-nav
+        - if current_user
+          li.nav-item
+            = link_to 'Create New Course', new_admin_course_path, class:'nav-link'
+          li.nav-item
+            = link_to '登出', logout_path, method: :delete, class:'nav-link'
+        - else
+          li.nav-item
+            = link_to '登入', login_path, class:'nav-link'

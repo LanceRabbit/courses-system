@@ -1,0 +1,14 @@
+.row.justify-content-md-center
+  .card
+    .card-header.text-center 登入
+    .card-body
+      = simple_form_for(:session, url: login_path) do |f|
+        .form-group
+          = f.label 'Email'
+          = f.email_field :email, class: 'form-control', pattern: '[^@]+@[^@]+\.[a-zA-Z]{2,6}'
+        .form-group
+          = f.label 'Password'
+          = f.password_field :password, class: 'form-control'
+        .form-group
+          .float-right
+            = f.button :submit, 'Login', class: 'btn btn-primary'
