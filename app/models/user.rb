@@ -14,6 +14,8 @@
 #  index_users_on_email  (email) UNIQUE
 #
 class User < ApplicationRecord
+  has_many :purchases, dependent: :restrict_with_error
+
   has_secure_password
   validates :email, uniqueness: { case_sensitive: false }, presence: true
 

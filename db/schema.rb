@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_13_071143) do
+ActiveRecord::Schema.define(version: 2021_10_15_041831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(version: 2021_10_13_071143) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_courses_on_category_id"
     t.index ["slug"], name: "index_courses_on_slug", unique: true
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.string "currency", null: false
+    t.integer "price", null: false
+    t.datetime "expired_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_purchases_on_course_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
