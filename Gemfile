@@ -34,6 +34,9 @@ gem 'bootstrap', '~> 4.6.0'
 # Bootstrap JavaScript depends on jQuery. add the jquery-rails gem
 gem 'jquery-rails'
 gem 'simple_form', '~> 5.1.0'
+# use grape as api
+gem 'grape', '~> 1.6.0'
+gem 'grape-entity', '~> 0.10.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
