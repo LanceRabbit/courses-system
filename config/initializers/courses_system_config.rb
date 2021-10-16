@@ -5,4 +5,6 @@ module CoursesSystemConfig
     HKD
     TWD
   ].freeze
+
+  SESSION_EXPIRED_HOURS = 1
 end

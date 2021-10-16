@@ -26,6 +26,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# for api token
+gem 'jwt', '~> 2.3.0'
+# standardized way to build and use Service Objects (aka Commands) in Ruby
+gem 'simple_command'
 
 # reduce the html syntax
 gem 'slim', '~> 4.0.1'
@@ -34,6 +38,9 @@ gem 'bootstrap', '~> 4.6.0'
 # Bootstrap JavaScript depends on jQuery. add the jquery-rails gem
 gem 'jquery-rails'
 gem 'simple_form', '~> 5.1.0'
+# use grape as api
+gem 'grape', '~> 1.6.0'
+gem 'grape-entity', '~> 0.10.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

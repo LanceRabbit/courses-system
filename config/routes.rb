@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  mount APIBase => '/'
+
   namespace :admin do
     resources :courses, param: :slug
     root to: "courses#index"
