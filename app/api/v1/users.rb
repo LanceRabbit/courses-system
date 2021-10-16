@@ -10,13 +10,12 @@ module V1
       end
 
       post do
-        user = ::User.find_by(email: params[:email])
+        command = AuthenticateUser.call(params[:email], params[:password])
 
-        if user.present? && user&.authenticate(params[:password])
-          token = ::JsonWebToken.encode(user_id: user.id)
-          { auth_token: token, status: :ok }
+        if command.success?
+          { auth_token: command.result, status: :ok }
         else
-          error!({ message: "Invalid email or password" }, 401)
+          error!({ error: command.errors }, :unauthorized)
         end
       end
     end

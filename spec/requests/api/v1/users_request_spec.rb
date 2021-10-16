@@ -33,8 +33,8 @@ RSpec.describe "V1::Users", type: :request do
         expect(response).to have_http_status(:unauthorized)
       end
 
-      it 'got error message' do
-        expect(JSON.parse(response.body)['message']).to eq("Invalid email or password")
+      it 'got error' do
+        expect(JSON.parse(response.body)['error']['user_authentication']).to eq("Invalid email or password")
       end
     end
   end
