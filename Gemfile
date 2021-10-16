@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # for api token
 gem 'jwt', '~> 2.3.0'
+# standardized way to build and use Service Objects (aka Commands) in Ruby
+gem 'simple_command'
 
 # reduce the html syntax
 gem 'slim', '~> 4.0.1'
