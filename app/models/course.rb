@@ -27,6 +27,7 @@
 #
 class Course < ApplicationRecord
   belongs_to :category, inverse_of: :courses
+  has_many :purchases, dependent: :restrict_with_error
 
   validates :title, :status, :currency, :category_id, presence: true
   validates :slug, presence: true, uniqueness: true

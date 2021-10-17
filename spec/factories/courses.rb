@@ -32,5 +32,9 @@ FactoryBot.define do
     status             { 'unpublished' }
     currency           { 'USD' }
     category           { create(:category) }
+
+    trait :published do
+      status { 'published' }
+    end
   end
 end

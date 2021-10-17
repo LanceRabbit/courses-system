@@ -7,5 +7,6 @@ module V1
     helpers V1::Helpers::AuthenticationHelper
 
     mount Users
+    mount Purchases
   end
 end
