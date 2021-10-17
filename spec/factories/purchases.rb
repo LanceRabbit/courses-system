@@ -23,5 +23,9 @@ FactoryBot.define do
     expired_at { course.activation_period.days.after }
     currency   { course.currency }
     price      { course.price }
+
+    trait :expired do
+      expired_at { Time.zone.yesterday }
+    end
   end
 end

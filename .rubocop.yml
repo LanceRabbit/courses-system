@@ -94,3 +94,5 @@ RSpec/ImplicitSubject:
   Enabled: false
 RSpec/NestedGroups:
   Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
