@@ -18,14 +18,10 @@
 #
 FactoryBot.define do
   factory :purchase do
-    user { create(:user) }
-
-    before :create do |purchase|
-      course = create(:user)
-      purchase.course = course
-      purchase.expired_at = course.activation_period.days.after
-      purchase.currency = course.currency
-      purchase.price = course.price
-    end
+    user
+    course
+    expired_at { course.activation_period.days.after }
+    currency   { course.currency }
+    price      { course.price }
   end
 end

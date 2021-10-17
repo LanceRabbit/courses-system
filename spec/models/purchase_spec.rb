@@ -27,6 +27,9 @@ RSpec.describe Purchase, type: :model do
   describe "validations" do
     subject { build(:purchase) }
 
+    let(:user) { create(:user) }
+    let(:course) { create(:course) }
+
     it { is_expected.to validate_presence_of(:currency) }
     it { is_expected.to validate_presence_of(:course_id) }
     it { is_expected.to validate_numericality_of(:price).is_greater_than_or_equal_to(0) }
